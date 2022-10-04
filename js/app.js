@@ -84,28 +84,16 @@ Player.prototype.render = function () {
 Player.prototype.handleInput = function (key) {
     switch (key) {
         case "left":
-            //   if (this.x > boardSize.left) {
-            //     this.x -= tileSize.width;
             if (this.x > 0) {
                 this.x -= col;
             }
-            //   }
-
             break;
         case "right":
-            //   if (this.x < boardSize.right - tileSize.width) {
-            //     this.x += tileSize.width;
-
             if (this.x < playground.width / 2) {
                 this.x += col;
             }
-            //   }
-
             break;
         case "up":
-            //   if (this.y > boardSize.top) {
-            // console.log(this.y, ' - this.y');
-            // console.log(playground.height, ' - playground.height');
             if (this.y < row) {
                 finish();
             };
@@ -117,10 +105,6 @@ Player.prototype.handleInput = function (key) {
 
             break;
         case "down":
-            //   if (this.y < boardSize.bottom - tileSize.height * 2) {
-            //     this.y += tileSize.height;
-            //   console.log(this.y, ' - this.y');
-            //   console.log(playground.height, ' - playground.height');
             if (this.y + row < playground.height) {
                 this.y += row;
             }
@@ -149,9 +133,9 @@ let bug2 = new Enemy();
 bug2.y = 145;
 let bug3 = new Enemy();
 bug3.y = 220;
-var allEnemies = [bug1, bug2, bug3];
+let allEnemies = [bug1, bug2, bug3];
 
-
+// let allEnemies = []
 
 function finish() {
     score++;
@@ -190,12 +174,6 @@ function collision(first, second) {
         first.x + first.width < second.x ||
         first.y > second.y + second.height ||
         first.y + first.height < second.y);
-    // if (first.x > second.x + second.width ||
-    //     first.x + first.width < second.x ||
-    //     first.y > second.y + second.height ||
-    //     first.y + first.height < second.y) {
-    //     console.log('wdswf')
-    // }
 }
 
 
