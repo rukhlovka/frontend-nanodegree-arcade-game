@@ -2,9 +2,9 @@ const Enemy = function (y) {
     this.sprite = 'images/enemy-bug.png';
     this.height = 75;
     this.width = 100;
-    this.x = 0;
+    this.x = 0 - this.width;
     this.y = y;
-    this.speed = Math.random() * 500 + 200;
+    this.speed = Math.random() * 500 + 100;
 };
 let score = 0;
 const row = 85;
@@ -17,7 +17,7 @@ const playground = {
 Enemy.prototype.update = function (dt) {
     this.x += dt * this.speed;
     if (this.x > playground.width) {
-        this.x = 0;
+        this.x = 0 - this.width;
     }
     this.checkCollisions();
 };
